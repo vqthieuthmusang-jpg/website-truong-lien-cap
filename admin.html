@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quản trị website – Trường PTDTBT TH&amp;THCS Sin Suối Hồ</title>
+<meta name="description" content="Trang quản trị nội dung website nhà trường.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14653F">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;subset=vietnamese&amp;display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="adm">
+<header class="adm-top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.png" alt="Logo nhà trường" width="44" height="44"><span class="brand-text"><span class="brand-sub">Quản trị website</span><span class="brand-name">Trường PTDTBT TH&amp;THCS Sin Suối Hồ</span></span></a>
+    <div class="adm-user" id="adm-user" hidden>
+      <span id="adm-who"></span>
+      <a class="btn btn-outline btn-sm" href="index.html" target="_blank" rel="noopener">Xem website ↗</a>
+      <button class="btn btn-primary btn-sm" type="button" id="btn-logout">Đăng xuất</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ĐĂNG NHẬP -->
+  <section id="login" class="adm-login">
+    <form class="card" id="login-form" autocomplete="off">
+      <div class="card-body">
+        <h1>Đăng nhập quản trị</h1>
+        <p class="meta">Dùng mã truy cập GitHub (token) của tài khoản quản lý kho website.</p>
+        <label class="fld"><span>Mã truy cập GitHub</span>
+          <input type="password" id="token" required spellcheck="false" autocomplete="off" placeholder="github_pat_...">
+        </label>
+        <label class="chk"><input type="checkbox" id="remember"> Ghi nhớ trên máy này (chỉ dùng trên máy riêng)</label>
+        <button class="btn btn-accent" type="submit" id="btn-login">Đăng nhập</button>
+        <p class="adm-err" id="login-err" role="alert"></p>
+        <details class="adm-help">
+          <summary>Cách tạo mã truy cập (làm một lần)</summary>
+          <ol>
+            <li>Đăng nhập GitHub bằng tài khoản quản lý kho website.</li>
+            <li>Mở <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
+            <li>Đặt tên (ví dụ “Quan tri website truong”), chọn thời hạn.</li>
+            <li><b>Repository access</b> → <i>Only select repositories</i> → chọn kho <code id="repo-name"></code>.</li>
+            <li><b>Permissions → Repository permissions → Contents</b> → <i>Read and write</i>.</li>
+            <li>Bấm <b>Generate token</b>, chép mã và dán vào ô trên. Không gửi mã này cho người khác.</li>
+          </ol>
+          <p>Người phụ trách khác muốn quản trị: thêm tài khoản GitHub của họ vào kho (Settings → Collaborators), rồi họ tự tạo mã riêng.</p>
+        </details>
+      </div>
+    </form>
+  </section>
+
+  <!-- ỨNG DỤNG -->
+  <section id="app" hidden>
+    <div class="wrap adm-layout">
+      <nav class="adm-nav" aria-label="Mục quản trị">
+        <button type="button" data-tab="tin-tuc" aria-current="true">Tin tức</button>
+        <button type="button" data-tab="thong-bao">Thông báo</button>
+        <button type="button" data-tab="thuc-don">Thực đơn tuần</button>
+        <button type="button" data-tab="cong-khai">Công khai</button>
+        <button type="button" data-tab="thu-vien">Thư viện ảnh</button>
+        <button type="button" data-tab="thong-tin">Thông tin trường</button>
+      </nav>
+      <div class="adm-panel" id="panel" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<div class="adm-toast" id="toast" role="status" hidden></div>
+
+<script src="data/cau-hinh.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
