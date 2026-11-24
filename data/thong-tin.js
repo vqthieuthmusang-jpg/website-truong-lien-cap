@@ -17,7 +17,7 @@ window.TRUONG = {
   // Link nhúng bản đồ: Google Maps → Chia sẻ → Nhúng bản đồ → chép phần src="..."
   banDoNhung: "https://www.google.com/maps?q=Sin+Su%E1%BB%91i+H%E1%BB%93,+Lai+Ch%C3%A2u&z=13&output=embed",
   banDoLink: "https://www.google.com/maps/search/?api=1&query=Tr%C6%B0%E1%BB%9Dng+PTDTBT+TH%26THCS+Sin+Su%E1%BB%91i+H%E1%BB%93+Lai+Ch%C3%A2u",
-  website: "",
+  website: "https://vqthieuthmusang-jpg.github.io/website-truong-lien-cap/",
   truongBanBienTap: "",
 
   khauHieu: "Dạy tốt – Học tốt",
